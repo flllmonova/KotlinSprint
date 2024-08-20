@@ -5,12 +5,12 @@ fun main() {
     var hour: Int = 9
     var minute: Int = 7
 
-    println("Год полета в космос: $year")
-    println("Час взлета: 0$hour")
-    println("Минуты взлета: 0$minute")
+    println(String.format("Год полета в космос: %d", year))
+    println(String.format("Час взлета: 0%d", hour))
+    println(String.format("Минуты взлета: 0%d", minute))
 
     hour = 10
     minute = 55
 
-    print("Время посадки: $hour:$minute")
+    print(String.format("Время посадки: %d:%d", hour, minute))
 }
