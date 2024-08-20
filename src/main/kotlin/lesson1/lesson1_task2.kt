@@ -1,15 +1,15 @@
 package org.example.lesson1
 
 fun main() {
-    var numberOfOrders: UInt = 75u
+    val numberOfOrders: Int = 75
     val messageOfSuccefulPurchase: String = "Спасибо за покупку!"
 
     println("Количество заказов: $numberOfOrders")
     println("Сообщение благодарность за покупку: \"$messageOfSuccefulPurchase\"")
 
-    var numberOfEmployees: UInt = 2000u
+    var numberOfEmployees: Int = 2000
     // println("Количество работников: $numberOfEmployees")
 
-    numberOfEmployees -= 1u
+    numberOfEmployees = 1999
     println("Количество работников: $numberOfEmployees")
 }
