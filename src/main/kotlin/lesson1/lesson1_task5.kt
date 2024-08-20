@@ -10,7 +10,7 @@ fun main() {
     val hours: Short = (minutes / numberOfMinutesPerHour).toShort()
     val remainingMinutes: Short = (minutes % numberOfMinutesPerHour).toShort()
 
-    val firstTwoDigitNumber = 10
+    val firstTwoDigitNumber: Byte = 10
     val formattedHours: String = if (hours < firstTwoDigitNumber) "0$hours" else "$hours"
     val formattedMinutes: String = if (remainingMinutes < firstTwoDigitNumber) "0$remainingMinutes" else "$remainingMinutes"
     val formattedSeconds: String = if (remainingSeconds < firstTwoDigitNumber) "0$remainingSeconds" else "$remainingSeconds"
