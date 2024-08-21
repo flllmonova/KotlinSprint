@@ -1,19 +1,15 @@
 package org.example.lesson1
 
+const val NUMBER_OF_SECONDS_PER_MINUTE: Byte = 60
+const val NUMBER_OF_MINUTES_PER_HOUR: Byte = 60
+
 fun main() {
-    val numberOfSecondsPerMinute: Byte = 60
-    val numberOfMinutesPerHour: Byte = 60
-
     val seconds: Short = 6480
-    val minutes: Short = (seconds / numberOfSecondsPerMinute).toShort()
-    val remainingSeconds: Short = (seconds % numberOfSecondsPerMinute).toShort()
-    val hours: Short = (minutes / numberOfMinutesPerHour).toShort()
-    val remainingMinutes: Short = (minutes % numberOfMinutesPerHour).toShort()
+    val minutes: Short = (seconds / NUMBER_OF_SECONDS_PER_MINUTE).toShort()
+    val remainingSeconds: Short = (seconds % NUMBER_OF_SECONDS_PER_MINUTE).toShort()
+    val hours: Short = (minutes / NUMBER_OF_MINUTES_PER_HOUR).toShort()
+    val remainingMinutes: Short = (minutes % NUMBER_OF_MINUTES_PER_HOUR).toShort()
 
-    val firstTwoDigitNumber: Byte = 10
-    val formattedHours: String = if (hours < firstTwoDigitNumber) "0$hours" else "$hours"
-    val formattedMinutes: String = if (remainingMinutes < firstTwoDigitNumber) "0$remainingMinutes" else "$remainingMinutes"
-    val formattedSeconds: String = if (remainingSeconds < firstTwoDigitNumber) "0$remainingSeconds" else "$remainingSeconds"
-
-    println(String.format("%s:%s:%s", formattedHours, formattedMinutes, formattedSeconds))
+    val timeInSpace: String = "%02d:%02d:%02d".format(hours, remainingMinutes, remainingSeconds)
+    println(timeInSpace)
 }
