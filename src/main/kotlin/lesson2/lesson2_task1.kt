@@ -9,7 +9,7 @@ fun main() {
 
     val averageScoreInEnglish = (
             englishGradeofStudent1 + englishGradeofStudent2 +
-                    englishGradeofStudent3 + englishGradeofStudent4) / numberOfStudents
+            englishGradeofStudent3 + englishGradeofStudent4) / numberOfStudents
 
     println(averageScoreInEnglish)
 }
