@@ -12,6 +12,7 @@ fun main() {
 
     val arrivalHour = totalDepartureAndTravelTimeInMinutes / NUMBER_OF_MINUTES_IN_HOUR
     val arrivalMinute = totalDepartureAndTravelTimeInMinutes % NUMBER_OF_MINUTES_IN_HOUR
+    val arrivalTime = String.format("%02d:%02d", arrivalHour, arrivalMinute)
 
-    System.out.printf("%02d:%02d", arrivalHour, arrivalMinute)
+    println(arrivalTime)
 }
