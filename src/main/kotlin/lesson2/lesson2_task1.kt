@@ -1,16 +1,16 @@
 package org.example.lesson2
 
 fun main() {
-    val englishGradeofStudent1 = (3).toFloat()
-    val englishGradeofStudent2 = (4).toFloat()
-    val englishGradeofStudent3 = (3).toFloat()
-    val englishGradeofStudent4 = (5).toFloat()
+    val englishGradeOfStudent1 = 3
+    val englishGradeOfStudent2 = 4
+    val englishGradeOfStudent3 = 3
+    val englishGradeOfStudent4 = 5
 
     val numberOfStudents = 4
 
     val averageScoreInEnglish = (
-        englishGradeofStudent1 + englishGradeofStudent2 +
-        englishGradeofStudent3 + englishGradeofStudent4) / numberOfStudents
+        englishGradeOfStudent1 + englishGradeOfStudent2 +
+        englishGradeOfStudent3 + englishGradeOfStudent4).toFloat() / numberOfStudents
 
     println(averageScoreInEnglish)
 }
