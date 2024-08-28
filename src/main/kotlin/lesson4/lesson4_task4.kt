@@ -2,10 +2,12 @@ package org.example.lesson4
 
 fun main() {
     val trainingDay = 5
-    val isHandsTraining = trainingDay % 2 == 1
-    val isPressTraining = trainingDay % 2 == 1
-    val isLegsTraining = trainingDay % 2 == 0
-    val isBackTraining = trainingDay % 2 == 0
+    val isEvenDay = trainingDay % 2 == 0
+
+    val isHandsTraining = !isEvenDay
+    val isPressTraining = !isEvenDay
+    val isLegsTraining = isEvenDay
+    val isBackTraining = isEvenDay
 
     println(
         "Упражнения для рук:    $isHandsTraining\n" +
