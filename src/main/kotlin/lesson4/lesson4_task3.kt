@@ -8,13 +8,13 @@ const val UNFAVORABLE_TIME_OF_YEAR = "зима"
 fun main() {
     val isSunny = true
     val isAwningOpen = true
-    val airHumidity = 20
+    val currentAirHumidity = 20
     val currentTimeOfYear = "зима"
 
     val analysisOfConditions =
         (IS_SUNNY == isSunny) &&
         (IS_AWNING_OPEN == isAwningOpen) &&
-        (REQUIRED_AIR_HUMIDITY == airHumidity) &&
+        (REQUIRED_AIR_HUMIDITY == currentAirHumidity) &&
         (UNFAVORABLE_TIME_OF_YEAR != currentTimeOfYear)
 
     println("Благоприятные ли условия сейчас для роста бобовых? $analysisOfConditions")
