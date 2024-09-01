@@ -9,15 +9,17 @@ fun main() {
     var cargoVolume = 80
 
     println(
-        "Груз с весом $cargoWeight кг и " +
-        "объемом $cargoVolume л соответствует категории 'Average': " +
-        "${(cargoWeight > MINIMUM_WEIGHT_OF_CATEGORY_AVERAGE) && (cargoWeight <= MAXIMUM_WEIGHT_OF_CATEGORY_AVERAGE) && (cargoVolume < MAXIMUM_VOLUME_OF_CATEGORY_AVERAGE)}")
+        "Груз с весом $cargoWeight кг и объемом $cargoVolume л соответствует категории 'Average': ${
+        (cargoWeight > MINIMUM_WEIGHT_OF_CATEGORY_AVERAGE) && 
+        (cargoWeight <= MAXIMUM_WEIGHT_OF_CATEGORY_AVERAGE) && 
+        (cargoVolume < MAXIMUM_VOLUME_OF_CATEGORY_AVERAGE)}")
 
     cargoWeight = 50
     cargoVolume = 100
 
     println(
-        "Груз с весом $cargoWeight кг и " +
-        "объемом $cargoVolume л соответствует категории 'Average': " +
-        "${(cargoWeight > MINIMUM_WEIGHT_OF_CATEGORY_AVERAGE) && (cargoWeight <= MAXIMUM_WEIGHT_OF_CATEGORY_AVERAGE) && (cargoVolume < MAXIMUM_VOLUME_OF_CATEGORY_AVERAGE)}")
+        "Груз с весом $cargoWeight кг и объемом $cargoVolume л соответствует категории 'Average': ${
+        (cargoWeight > MINIMUM_WEIGHT_OF_CATEGORY_AVERAGE) &&
+        (cargoWeight <= MAXIMUM_WEIGHT_OF_CATEGORY_AVERAGE) &&
+        (cargoVolume < MAXIMUM_VOLUME_OF_CATEGORY_AVERAGE)}")
 }
