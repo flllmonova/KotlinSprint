@@ -7,10 +7,17 @@ const val MIN_NUMBER_OF_PROVISIONS_BOXES = 50
 const val IS_WEATHER_FAVORABLE = true
 
 fun main() {
-    val isShipDamaged = false
-    val numberOfCrew = 70
-    val numberOfProvisionBoxes = 51
-    val isWeatherFavorable = false
+    println("Корабль имеет повреждения корпуса? [true / false]")
+    val isShipDamaged = readln().toBoolean()
+
+    println("Сколько человек в экипаже?")
+    val numberOfCrew = readln().toInt()
+
+    println("Сколько есть ящиков провизии?")
+    val numberOfProvisionBoxes = readln().toInt()
+
+    println("Погода благоприятна для плавания? [true / false]")
+    val isWeatherFavorable = readln().toBoolean()
 
     println(
         "Возможность отправить корабль в плавание: ${
