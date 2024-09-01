@@ -12,10 +12,10 @@ fun main() {
     val currentTimeOfYear = "зима"
 
     val analysisOfConditions =
-        (IS_SUNNY == isSunny) &&
-        (IS_AWNING_OPEN == isAwningOpen) &&
-        (REQUIRED_AIR_HUMIDITY == currentAirHumidity) &&
-        (UNFAVORABLE_TIME_OF_YEAR != currentTimeOfYear)
+        (isSunny == IS_SUNNY) &&
+        (isAwningOpen == IS_AWNING_OPEN) &&
+        (currentAirHumidity == REQUIRED_AIR_HUMIDITY) &&
+        (currentTimeOfYear != UNFAVORABLE_TIME_OF_YEAR)
 
     println("Благоприятные ли условия сейчас для роста бобовых? $analysisOfConditions")
 }
