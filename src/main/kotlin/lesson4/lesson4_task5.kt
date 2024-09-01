@@ -21,7 +21,7 @@ fun main() {
 
     println(
         "Возможность отправить корабль в плавание: ${
-        (IS_THERE_DAMAGE_OF_SHIP == isShipDamaged) &&
+        (isShipDamaged == IS_THERE_DAMAGE_OF_SHIP) &&
         (numberOfCrew in MIN_NUMBER_OF_CREW..MAX_NUMBER_OF_CREW) &&
         (numberOfProvisionBoxes > MIN_NUMBER_OF_PROVISIONS_BOXES)
         ||
