@@ -1,32 +1,27 @@
 package org.example.lesson5
 
-const val FIRST_WINNING_NUMBER = 10
-const val SECOND_WINNING_NUMBER = 20
+const val INITIAL_NUMBER_OF_ITERATION = 1
+const val FINAL_NUMBER_OF_ITERATION = 2
 
 fun main() {
 
+    val listOfWinningNumbers = listOf(10, 20)
+
     println("Угадайте два числа от 0 до 42")
 
-    println("Введите первое число:")
-    val firstNumber = readLine()!!.toInt()
-
-    println("Введите второе число:")
-    val secondNumber = readLine()!!.toInt()
-
-    val isFirstNumberWinning = when {
-        firstNumber == FIRST_WINNING_NUMBER || firstNumber == SECOND_WINNING_NUMBER -> true
-        else -> false
+    val listOfNumbers = ArrayList<Int>()
+    for (i in INITIAL_NUMBER_OF_ITERATION..FINAL_NUMBER_OF_ITERATION) {
+        println("Введите $i число:")
+        listOfNumbers.add(readLine()!!.toInt())
     }
-    val isSecondNumberWinning = when {
-        secondNumber == FIRST_WINNING_NUMBER || secondNumber == SECOND_WINNING_NUMBER -> true
-        else -> false
-    }
-    val textResult = when {
-        (isFirstNumberWinning == true) && (isSecondNumberWinning == true) -> "Поздравляем! Вы выиграли главный приз!"
-        (isFirstNumberWinning == true) || (isSecondNumberWinning == true) -> "Вы выиграли утешительный приз!"
+    val numberOfMatches = listOfNumbers.intersect(listOfWinningNumbers).size
+
+    val resultText = when (numberOfMatches) {
+        2 -> "Поздравляем! Вы выиграли главный приз!"
+        1 -> "Вы выиграли утешительный приз!"
         else -> "Неудача!"
     }
 
-    println(textResult)
-    println("Для победы нужны были числа: $FIRST_WINNING_NUMBER и $SECOND_WINNING_NUMBER")
+    println(resultText)
+    println("Для победы нужны были числа: $listOfWinningNumbers")
 }
