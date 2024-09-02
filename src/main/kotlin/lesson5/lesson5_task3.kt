@@ -14,8 +14,8 @@ fun main() {
         println("Введите $i число:")
         listOfNumbers.add(readLine()!!.toInt())
     }
-    val numberOfMatches = listOfNumbers.intersect(listOfWinningNumbers).size
 
+    val numberOfMatches = listOfNumbers.intersect(listOfWinningNumbers).size
     val resultText = when (numberOfMatches) {
         2 -> "Поздравляем! Вы выиграли главный приз!"
         1 -> "Вы выиграли утешительный приз!"
