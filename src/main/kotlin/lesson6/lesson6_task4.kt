@@ -11,20 +11,27 @@ fun main() {
 
     println("Угадайте число от $initialNumberOfInterval до $finalNumberOfInterval")
 
-    while (numberOfAttempts > 0) {
+    while (numberOfAttempts-- > 0) {
         val number = readln().toInt()
         if (number == winningNumber) {
             println("Это была великолепная игра!")
             break
         } else {
+            if (numberOfAttempts == 0) {
+                println(
+                    """
+                    Попытки закончились
+                    Было загадано число $winningNumber
+                """.trimIndent()
+                )
+                break
+            }
             println(
                 """
                 Неверно
-                Оставшиеся попытки: ${--numberOfAttempts}
+                Оставшиеся попытки: $numberOfAttempts
             """.trimIndent()
             )
         }
     }
-
-    if (numberOfAttempts == 0) println("Было загадано число $winningNumber")
 }
