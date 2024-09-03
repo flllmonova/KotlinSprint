@@ -23,7 +23,7 @@ fun main() {
     var listOfNumbers = ArrayList<Int>()
     for (i in INITIAL_ITERATION_NUMBER..FINAL_ITERATION_NUMBER) {
         println("Введите $i число:")
-        listOfNumbers.add(readLine()!!.toInt())
+        listOfNumbers.add(readln().toInt())
     }
 
     val numberOfMatches = listOfNumbers.intersect(listOfWinningNumbers).size
