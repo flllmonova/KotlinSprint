@@ -5,7 +5,10 @@ const val SECOND_WINNING_NUMBER = 20
 
 fun main() {
 
-    println("Угадайте два числа от 0 до 42")
+    val initialNumberOfInterval = 0
+    val finalNumberOfInterval = 42
+
+    println("Угадайте два числа от $initialNumberOfInterval до $finalNumberOfInterval")
 
     println("Введите первое число:")
     val firstNumber = readln().toInt()
