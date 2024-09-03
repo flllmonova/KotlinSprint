@@ -10,8 +10,6 @@ fun main() {
     val currentYear = 2024
     val userAge = currentYear - yearOfUserBirth
 
-    when {
-        userAge >= AGE_OF_MAJORITY -> println("Показать экран со скрытым контентом")
-        else -> println("Вернуться на главный экран")
-    }
+    if (userAge >= AGE_OF_MAJORITY) println("Показать экран со скрытым контентом")
+    else println("Вернуться на главный экран")
 }
