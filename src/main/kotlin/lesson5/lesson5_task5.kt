@@ -5,20 +5,21 @@ import kotlin.random.nextInt
 
 const val INITIAL_ITERATION_NUMBER = 1
 const val FINAL_ITERATION_NUMBER = 3
-const val BEGINNING_OF_RANGE = 0
-const val END_OF_RANGE = 43
 const val MIN_NUMBER_OF_MATCHES = 1
 const val MID_NUMBER_OF_MATCHES = 2
 const val MAX_NUMBER_OF_MATCHES = 3
 
 fun main() {
 
+    val initialNumberOfInterval = 0
+    var finalNumberOfInterval = 43
+
     var listOfWinningNumbers = ArrayList<Int>()
     for (i in INITIAL_ITERATION_NUMBER..FINAL_ITERATION_NUMBER) {
-        listOfWinningNumbers.add(Random.nextInt(BEGINNING_OF_RANGE until END_OF_RANGE))
+        listOfWinningNumbers.add(Random.nextInt(initialNumberOfInterval until finalNumberOfInterval))
     }
 
-    println("Угадайте три числа от 0 до 42")
+    println("Угадайте три числа от $initialNumberOfInterval до ${--finalNumberOfInterval}")
 
     var listOfNumbers = ArrayList<Int>()
     for (i in INITIAL_ITERATION_NUMBER..FINAL_ITERATION_NUMBER) {
