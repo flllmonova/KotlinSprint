@@ -9,7 +9,7 @@ fun main() {
 
     println("Для проверки что вы не бот, решите простой математический пример")
 
-    while (attemptsNumber > 0) {
+    while (attemptsNumber-- > 0) {
         val number1 = Random.nextInt(beginningOfInterval, endOfInterval)
         val number2 = Random.nextInt(beginningOfInterval, endOfInterval)
         val sumOfNumbers = number1 + number2
@@ -22,12 +22,11 @@ fun main() {
             println("Добро пожаловать!")
             break
         } else {
-            --attemptsNumber
             if (attemptsNumber == 0) {
                 println("Доступ запрещен")
                 break
             }
-            println("Неверно. Попробуйте еще раз")
+            println("Неверно. Оставшиеся попытки: $attemptsNumber")
         }
     }
 }
