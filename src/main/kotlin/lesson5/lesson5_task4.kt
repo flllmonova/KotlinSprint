@@ -13,21 +13,15 @@ fun main() {
     """.trimIndent()
     )
 
-    when (userLogin) {
-        readLine()!! -> {
-            println("Отлично, введите пароль:")
-            when (userPassword) {
-                readLine()!! -> println(
-                    """
+    if (userLogin == readln()) {
+        println("Отлично, введите пароль:")
+        if (userPassword == readln()) {
+            println(
+                """
                     Ваши данные проверены и верны.
                     Пользователь "$userLogin", вам разрешено входить на борт корабля "Heart of Gold"!
                 """.trimIndent()
-                )
-
-                else -> println("Пароль введен неверно.")
-            }
-        }
-
-        else -> println("Вы не зарегистрированы в системе, желаете пройти регистрацию?")
-    }
+            )
+        } else println("Пароль введен неверно.")
+    } else println("Вы не зарегистрированы в системе, желаете пройти регистрацию?")
 }
