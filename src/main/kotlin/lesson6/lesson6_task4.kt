@@ -1,13 +1,11 @@
 package org.example.lesson6
 
-import kotlin.random.Random
-
 fun main() {
 
     val initialNumberOfInterval = 1
-    var finalNumberOfInterval = 10
+    val finalNumberOfInterval = 9
     var numberOfAttempts = 5
-    val winningNumber = Random.nextInt(initialNumberOfInterval, finalNumberOfInterval--)
+    val winningNumber = (initialNumberOfInterval..finalNumberOfInterval).random()
 
     println("Угадайте число от $initialNumberOfInterval до $finalNumberOfInterval")
 
