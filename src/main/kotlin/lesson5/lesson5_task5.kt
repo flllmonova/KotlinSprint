@@ -3,6 +3,8 @@ package org.example.lesson5
 import kotlin.random.Random
 import kotlin.random.nextInt
 
+const val INITIAL_NUMBER_OF_INTERVAL = 0
+const val FINAL_NUMBER_OF_INTERVAL = 42
 const val INITIAL_ITERATION_NUMBER = 1
 const val FINAL_ITERATION_NUMBER = 3
 const val MIN_NUMBER_OF_MATCHES = 1
@@ -11,15 +13,12 @@ const val MAX_NUMBER_OF_MATCHES = 3
 
 fun main() {
 
-    val initialNumberOfInterval = 0
-    var finalNumberOfInterval = 43
-
     var listOfWinningNumbers = ArrayList<Int>()
     for (i in INITIAL_ITERATION_NUMBER..FINAL_ITERATION_NUMBER) {
-        listOfWinningNumbers.add(Random.nextInt(initialNumberOfInterval until finalNumberOfInterval))
+        listOfWinningNumbers.add(Random.nextInt(INITIAL_NUMBER_OF_INTERVAL..FINAL_NUMBER_OF_INTERVAL))
     }
 
-    println("Угадайте три числа от $initialNumberOfInterval до ${--finalNumberOfInterval}")
+    println("Угадайте три числа от $INITIAL_NUMBER_OF_INTERVAL до $FINAL_NUMBER_OF_INTERVAL")
 
     var listOfNumbers = ArrayList<Int>()
     for (i in INITIAL_ITERATION_NUMBER..FINAL_ITERATION_NUMBER) {
