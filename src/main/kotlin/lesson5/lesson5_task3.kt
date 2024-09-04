@@ -19,8 +19,8 @@ fun main() {
     val isSecondNumberWinning = (secondNumber == FIRST_WINNING_NUMBER) || (secondNumber == SECOND_WINNING_NUMBER)
 
     val textResult = when {
-        isFirstNumberWinning == true && isSecondNumberWinning == true -> "Поздравляем! Вы выиграли главный приз!"
-        isFirstNumberWinning == true || isSecondNumberWinning == true -> "Вы выиграли утешительный приз!"
+        isFirstNumberWinning && isSecondNumberWinning -> "Поздравляем! Вы выиграли главный приз!"
+        isFirstNumberWinning || isSecondNumberWinning -> "Вы выиграли утешительный приз!"
         else -> "Неудача!"
     }
 
