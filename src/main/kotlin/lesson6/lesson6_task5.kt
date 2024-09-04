@@ -1,17 +1,16 @@
 package org.example.lesson6
 
-import kotlin.random.Random
-
 fun main() {
     var attemptsNumber = 3
     val beginningOfInterval = 1
-    val endOfInterval = 10
+    val endOfInterval = 9
 
     println("Для проверки что вы не бот, решите простой математический пример")
 
     while (attemptsNumber-- > 0) {
-        val number1 = Random.nextInt(beginningOfInterval, endOfInterval)
-        val number2 = Random.nextInt(beginningOfInterval, endOfInterval)
+        val range = beginningOfInterval..endOfInterval
+        val number1 = range.random()
+        val number2 = range.random()
         val sumOfNumbers = number1 + number2
 
         println("$number1 + $number2 = ?")
