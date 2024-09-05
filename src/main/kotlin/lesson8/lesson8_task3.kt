@@ -9,7 +9,7 @@ fun main() {
     val requestedIngredient = readln()
 
     val messageOfIngredientPresence =
-        if (ingredientsOfRoll.indexOf(requestedIngredient) >= 0) "Ингредиент $requestedIngredient в рецепте есть"
+        if (requestedIngredient in ingredientsOfRoll) "Ингредиент $requestedIngredient в рецепте есть"
         else "Такого ингредиента в рецепте нет"
 
     println(messageOfIngredientPresence)
