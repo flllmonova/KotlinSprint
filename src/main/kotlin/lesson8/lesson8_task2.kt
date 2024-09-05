@@ -7,15 +7,13 @@ fun main() {
 
     println("Какой ингредиент хотите найти в рецепте ролла $nameOfRoll?")
     val requestedIngredient = readln()
-    var isIngredientThere = false
 
     for (i in ingredientsOfRoll) {
         if (i == requestedIngredient) {
             println("Ингредиент $requestedIngredient в рецепте есть")
-            isIngredientThere = true
-            break
+            return
         }
     }
 
-    if (!isIngredientThere) println("Такого ингредиента в рецепте нет")
+    println("Такого ингредиента в рецепте нет")
 }
