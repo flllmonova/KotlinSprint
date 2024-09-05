@@ -1,20 +1,24 @@
 package org.example.lesson7
 
-fun main() {
-    val rangeOfNumbers = '1'..'9'
-    val rangeOfLowercaseLetters = 'a'..'z'
-    val rangeOfUppercaseLetters = 'A'..'Z'
-    val listOfRanges = listOf(rangeOfNumbers, rangeOfLowercaseLetters, rangeOfUppercaseLetters)
+const val MIN_CHARS_COUNT = 6
 
-    val minPasswordLength = 6
+fun main() {
+    val rangeOfNumbers = 0..9
+    val rangeOfUppercaseLetters = 'A'..'Z'
+    val rangeOfLowercaseLetters = 'a'..'z'
+    val generalRange = rangeOfUppercaseLetters + rangeOfLowercaseLetters + rangeOfNumbers
     var password = ""
-    println("Минимальная длина пароля: $minPasswordLength символов")
-    println("Введите длину пароля:")
-    val passwordLength = readln().toInt()
+
+    println("Задайте длину пароля, не меньше $MIN_CHARS_COUNT символов")
+    var passwordLength = readln().toInt()
+
+    while (passwordLength < MIN_CHARS_COUNT) {
+        println("Слишком короткий пароль. Введите длину снова")
+        passwordLength = readln().toInt()
+    }
 
     for (i in 1..passwordLength) {
-        val randomRange = listOfRanges.random()
-        password += randomRange.random()
+        password += generalRange.random()
     }
 
     println("Ваш пароль сгенерирован: $password")
