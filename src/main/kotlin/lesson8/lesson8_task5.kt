@@ -4,7 +4,7 @@ fun main() {
     println("Сколько ингредиентов планируете записать?")
     val sizeOfIngredientsArray = readln().toInt()
 
-    val ingredientsArray = Array(sizeOfIngredientsArray) { "место-для-ингредиента" }
+    val ingredientsArray = Array(sizeOfIngredientsArray) { " " }
 
     for (i in 0 until sizeOfIngredientsArray) {
         println("Впишите ингредиент номер: ${i + 1}")
