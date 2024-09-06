@@ -7,7 +7,7 @@ fun main() {
     println("В рецепте есть базовые ингредиенты: \n$ingredientsList")
 
     println("Желаете добавить еще?")
-    if (readln() == "да") {
+    if (readln().equals("да", ignoreCase = true)) {
         println("Какой ингредиент вы хотите добавить?")
         ingredientsList.add(readln())
     } else return
