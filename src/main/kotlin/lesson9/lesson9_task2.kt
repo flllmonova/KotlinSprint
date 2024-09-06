@@ -2,15 +2,15 @@ package org.example.lesson9
 
 fun main() {
 
-    val listIngredients = mutableListOf("содовая вода", "сок лимона", "листья мяты")
+    val ingredientsList = mutableListOf("содовая вода", "сок лимона", "листья мяты")
 
-    println("В рецепте есть базовые ингредиенты: \n$listIngredients")
+    println("В рецепте есть базовые ингредиенты: \n$ingredientsList")
 
     println("Желаете добавить еще?")
     if (readln() == "да") {
         println("Какой ингредиент вы хотите добавить?")
-        listIngredients.add(readln())
+        ingredientsList.add(readln())
     } else return
 
-    println("Теперь в рецепте есть следующие ингредиенты: \n$listIngredients")
+    println("Теперь в рецепте есть следующие ингредиенты: \n$ingredientsList")
 }
