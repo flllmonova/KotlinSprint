@@ -12,7 +12,5 @@ fun main() {
         ingredientsList.add(readln())
     }
 
-    val uniqueAndSortedIngredientsList = ingredientsList.distinct().sorted()
-
-    println(uniqueAndSortedIngredientsList.joinToString().replaceFirstChar { it.uppercase() })
+    println(ingredientsList.toSet().sorted().joinToString().replaceFirstChar { it.uppercase() })
 }
