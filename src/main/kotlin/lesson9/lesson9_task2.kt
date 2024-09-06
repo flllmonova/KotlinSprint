@@ -1,0 +1,16 @@
+package org.example.lesson9
+
+fun main() {
+
+    val listIngredients = mutableListOf("содовая вода", "сок лимона", "листья мяты")
+
+    println("В рецепте есть базовые ингредиенты: \n$listIngredients")
+
+    println("Желаете добавить еще?")
+    if (readln() == "да") {
+        println("Какой ингредиент вы хотите добавить?")
+        listIngredients.add(readln())
+    } else return
+
+    println("Теперь в рецепте есть следующие ингредиенты: \n$listIngredients")
+}
