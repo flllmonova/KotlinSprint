@@ -19,9 +19,9 @@ fun main() {
 
         if (humanResultOfDiceRoll == computerResultOfDiceRoll) {
             println("Количество очков оказалось равным. Проведем еще один раунд\n")
-        }
+        } else break
 
-    } while (humanResultOfDiceRoll == computerResultOfDiceRoll)
+    } while (true)
 
     if (humanResultOfDiceRoll > computerResultOfDiceRoll) println("\nПобедило человечество")
     else println("\nПобедила машина")
