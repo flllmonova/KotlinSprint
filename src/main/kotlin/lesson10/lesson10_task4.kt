@@ -20,8 +20,6 @@ fun main() {
 }
 
 fun conductRoundAndGetWinnerName(firstPlayerName: String, secondPlayerName: String): String {
-    var winnerName = ""
-
     do {
         val firstPlayerResult = rollDace()
         val secondPlayerResult = rollDace()
@@ -32,12 +30,11 @@ fun conductRoundAndGetWinnerName(firstPlayerName: String, secondPlayerName: Stri
         if (firstPlayerResult == secondPlayerResult) {
             println("Количество очков оказалось равным. Проведем еще один раунд\n")
         } else {
-            winnerName = if (firstPlayerResult > secondPlayerResult) firstPlayerName else secondPlayerName
+            val winnerName = if (firstPlayerResult > secondPlayerResult) firstPlayerName else secondPlayerName
             println("Победу одержал игрок $winnerName")
+            return winnerName
         }
-    } while (firstPlayerResult == secondPlayerResult)
-
-    return winnerName
+    } while (true)
 }
 
 fun rollDace(): Int = (MIN_VALUE_ON_DICE..MAX_VALUE_ON_DICE).random() + (MIN_VALUE_ON_DICE..MAX_VALUE_ON_DICE).random()
