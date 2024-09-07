@@ -35,7 +35,6 @@ fun conductRoundAndGetWinnerName(firstPlayerName: String, secondPlayerName: Stri
             winnerName = if (firstPlayerResult > secondPlayerResult) firstPlayerName else secondPlayerName
             println("Победу одержал игрок $winnerName")
         }
-
     } while (firstPlayerResult == secondPlayerResult)
 
     return winnerName
