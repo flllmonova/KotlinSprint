@@ -16,7 +16,8 @@ fun main() {
 
         if (humanResultOfDiceRoll == computerResultOfDiceRoll) {
             println(
-                "Количество очков у игроков $computerName и $humanName оказалось равным.\nПроведем еще один раунд\n")
+                "Количество очков у игроков $computerName и $humanName оказалось равным.\nПроведем еще один раунд\n"
+            )
         }
 
         printResultOfDiceRoll(humanName, humanResultOfDiceRoll)
