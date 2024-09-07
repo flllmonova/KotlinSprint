@@ -14,13 +14,11 @@ fun main() {
         humanResultOfDiceRoll = rollDace()
         computerResultOfDiceRoll = rollDace()
 
+        printResultOfDiceRoll(humanName, humanResultOfDiceRoll)
+        printResultOfDiceRoll(computerName, computerResultOfDiceRoll)
+
         if (humanResultOfDiceRoll == computerResultOfDiceRoll) {
-            println(
-                "Количество очков у игроков $computerName и $humanName оказалось равным.\nПроведем еще один раунд\n"
-            )
-        } else {
-            printResultOfDiceRoll(humanName, humanResultOfDiceRoll)
-            printResultOfDiceRoll(computerName, computerResultOfDiceRoll)
+            println("Количество очков оказалось равным. Проведем еще один раунд\n")
         }
 
     } while (humanResultOfDiceRoll == computerResultOfDiceRoll)
@@ -33,5 +31,5 @@ fun rollDace(): Int =
     (MIN_VALUE_ON_DICE..MAX_VALUE_ON_DICE).random() + (MIN_VALUE_ON_DICE..MAX_VALUE_ON_DICE).random()
 
 fun printResultOfDiceRoll(playerName: String, playerResult: Int) {
-    println("Игрок $playerName бросает кость, количество очков: $playerResult")
+    println("Игрок $playerName бросает кости, количество очков: $playerResult")
 }
