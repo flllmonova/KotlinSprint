@@ -7,28 +7,22 @@ fun main() {
 
     val humanName = "\"Пользователь\""
     val computerName = "\"Компьютер\""
-    var humanResultOfDiceRoll = rollDace()
-    var computerResultOfDiceRoll = rollDace()
+    var humanResultOfDiceRoll: Int
+    var computerResultOfDiceRoll: Int
 
-    printResultOfDiceRoll(humanName, humanResultOfDiceRoll)
-    printResultOfDiceRoll(computerName, computerResultOfDiceRoll)
-
-    while (humanResultOfDiceRoll == computerResultOfDiceRoll) {
-        println(
-            """
-
-            Количество очков у игроков $computerName и $humanName оказалось равным
-            Проведем еще один раунд
-
-        """.trimIndent()
-        )
-
+    do {
         humanResultOfDiceRoll = rollDace()
         computerResultOfDiceRoll = rollDace()
 
+        if (humanResultOfDiceRoll == computerResultOfDiceRoll) {
+            println(
+                "Количество очков у игроков $computerName и $humanName оказалось равным.\nПроведем еще один раунд\n")
+        }
+
         printResultOfDiceRoll(humanName, humanResultOfDiceRoll)
         printResultOfDiceRoll(computerName, computerResultOfDiceRoll)
-    }
+
+    } while (humanResultOfDiceRoll == computerResultOfDiceRoll)
 
     if (humanResultOfDiceRoll > computerResultOfDiceRoll) println("\nПобедило человечество")
     else println("\nПобедила машина")
