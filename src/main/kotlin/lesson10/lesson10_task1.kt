@@ -18,10 +18,10 @@ fun main() {
             println(
                 "Количество очков у игроков $computerName и $humanName оказалось равным.\nПроведем еще один раунд\n"
             )
+        } else {
+            printResultOfDiceRoll(humanName, humanResultOfDiceRoll)
+            printResultOfDiceRoll(computerName, computerResultOfDiceRoll)
         }
-
-        printResultOfDiceRoll(humanName, humanResultOfDiceRoll)
-        printResultOfDiceRoll(computerName, computerResultOfDiceRoll)
 
     } while (humanResultOfDiceRoll == computerResultOfDiceRoll)
 
