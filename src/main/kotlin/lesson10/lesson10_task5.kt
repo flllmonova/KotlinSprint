@@ -23,7 +23,7 @@ fun main() {
 }
 
 fun logIn(login: String, password: String): String? {
-    return if ((login == USER_LOGIN) && (password == USER_PASSWORD)) return generateToken()
+    return if ((login == USER_LOGIN) && (password == USER_PASSWORD)) generateToken()
     else null
 }
 
