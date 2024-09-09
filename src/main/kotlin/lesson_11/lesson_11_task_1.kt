@@ -9,25 +9,8 @@ fun main() {
         2, "Standish", "ts900", "tomstandish@mail.ru"
     )
 
-    println(
-        """
-        Данные пользователя:
-        id: ${user1.userId}
-        Логин: ${user1.userLogin}
-        Пароль: ${user1.userPassword}
-        Почта: ${user1.userEmail}
-        
-    """.trimIndent()
-    )
-    println(
-        """
-        Данные пользователя:
-        id: ${user2.userId}
-        Логин: ${user2.userLogin}
-        Пароль: ${user2.userPassword}
-        Почта: ${user2.userEmail}   
-    """.trimIndent()
-    )
+    user1.printUserData(user1.userId, user1.userLogin, user1.userPassword, user1.userEmail)
+    user2.printUserData(user2.userId, user2.userLogin, user2.userPassword, user2.userEmail)
 }
 
 class User(
@@ -35,4 +18,16 @@ class User(
     val userLogin: String,
     val userPassword: String,
     val userEmail: String
-)
+) {
+    fun printUserData(userId: Int, userLogin: String, userPassword: String, userEmail: String) {
+        println(
+            """
+        Данные пользователя:
+        id: $userId
+        Логин: $userLogin
+        Пароль: $userPassword
+        Почта: $userEmail   
+    """.trimIndent()
+        )
+    }
+}
