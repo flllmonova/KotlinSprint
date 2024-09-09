@@ -1,4 +1,4 @@
-package org.example.lesson1
+package org.example.lesson_1_10.lesson_1
 
 const val NUMBER_OF_SECONDS_PER_MINUTE: Byte = 60
 const val NUMBER_OF_MINUTES_PER_HOUR: Byte = 60
