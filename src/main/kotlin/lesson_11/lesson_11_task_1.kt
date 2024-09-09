@@ -9,8 +9,8 @@ fun main() {
         2, "Standish", "ts900", "tomstandish@mail.ru"
     )
 
-    user1.printUserData(user1.userId, user1.userLogin, user1.userPassword, user1.userEmail)
-    user2.printUserData(user2.userId, user2.userLogin, user2.userPassword, user2.userEmail)
+    user1.printUserData()
+    user2.printUserData()
 }
 
 class User(
@@ -19,7 +19,8 @@ class User(
     val userPassword: String,
     val userEmail: String,
 ) {
-    fun printUserData(userId: Int, userLogin: String, userPassword: String, userEmail: String) {
+
+    fun printUserData() {
         println(
             """
         Данные пользователя:
