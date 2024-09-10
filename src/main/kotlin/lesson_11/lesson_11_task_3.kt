@@ -24,7 +24,7 @@ class Room(
         participant.status = "микрофон выключен"
     }
 
-    fun turnOnMicrophone(participant: Participant) {
+    fun turnOnMicrophoneOfParticipant(participant: Participant) {
         participant.status = "разговаривает"
     }
 
