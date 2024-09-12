@@ -4,6 +4,12 @@ fun main() {
 
 }
 
+class Category(
+    val name: String,
+    val description: String,
+    val cover: String,
+)
+
 class Ingredient(
     val name: String,
     val amount: Int,
@@ -39,9 +45,3 @@ class Recipe(
         cookingMethod = readln()
     }
 }
-
-class Category(
-    val name: String,
-    val description: String,
-    val cover: String,
-)
