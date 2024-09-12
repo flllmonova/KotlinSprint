@@ -7,9 +7,8 @@ fun main() {
 class Room(
     val cover: String,
     val name: String,
+    val participantList: MutableList<Participant> = mutableListOf(),
 ) {
-    val participantList: MutableList<Participant> = mutableListOf()
-
     fun addParticipant(newParticipant: Participant) {
         participantList.add(newParticipant)
         println("Добавлен участник ${newParticipant.nickname}")
@@ -20,16 +19,8 @@ class Room(
         println("статус: ${newParticipant.status}")
     }
 
-    fun turnOffMicrophoneOfParticipant(participant: Participant, ) {
-        participant.status = "микрофон выключен"
-    }
-
-    fun turnOnMicrophoneOfParticipant(participant: Participant) {
-        participant.status = "разговаривает"
-    }
-
-    fun turnOffSoundForParticipant(participant: Participant) {
-        participant.status = "пользователь заглушен"
+    fun changeParticipantStatus(participant: Participant, newStatus: String) {
+        participant.status = newStatus
     }
 }
 
