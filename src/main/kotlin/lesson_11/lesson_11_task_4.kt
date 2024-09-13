@@ -5,9 +5,11 @@ fun main() {
 }
 
 class Category(
+    val id: Int,
     val name: String,
     val description: String,
-    val cover: String,
+    val imageUrl: String,
+    val recipesList: List<Recipe>,
 )
 
 class Ingredient(
@@ -20,9 +22,9 @@ class Recipe(
     val id: Int,
     val name: String,
     val category: Category,
-    val cover: String,
-    val ingredientsList: MutableList<Ingredient> = mutableListOf(),
-    var cookingMethod: String = "",
+    val imageUrl: String,
+    val ingredientsList: List<Ingredient>,
+    var cookingMethod: List<String>,
     var inFavourite: Boolean = false,
 ) {
     fun calculateIngredientsForRequiredServingsNumber(requiredServingsNumber: Int) {
@@ -38,10 +40,5 @@ class Recipe(
 
     fun removeFromFavourite() {
         inFavourite = false
-    }
-
-    fun addCookingMethod() {
-        println("Напишите способ приготовления:")
-        cookingMethod = readln()
     }
 }
