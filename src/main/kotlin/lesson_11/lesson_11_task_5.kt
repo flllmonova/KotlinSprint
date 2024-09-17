@@ -20,10 +20,10 @@ class Forum {
     val messageHistory: MutableList<String> = mutableListOf()
 
     fun createNewUser(userName: String): ForumMember {
-        val newForumMember = ForumMember(idGenerator++, userName)
-        forumMembersList.add(newForumMember)
+        val newUser = ForumMember(idGenerator++, userName)
+        forumMembersList.add(newUser)
         println("Пользователь $userName успешно зарегистрирован на форуме.")
-        return newForumMember
+        return newUser
     }
 
     fun createNewMessage(userId: Int) {
@@ -33,9 +33,9 @@ class Forum {
         }
 
         println("Напишите сообщение:")
-        val message = ForumMessage(userId, readln())
+        val newMessage = ForumMessage(userId, readln())
         forumMembersList.forEach{ member: ForumMember ->
-            if (member.userId == userId) messageHistory.add("${member.userName}: ${message.text}")
+            if (member.userId == userId) messageHistory.add("${member.userName}: ${newMessage.message}")
         }
     }
 
@@ -54,5 +54,5 @@ class ForumMember(
 
 class ForumMessage(
     val authorId: Int,
-    val text: String,
+    val message: String,
 )
