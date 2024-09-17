@@ -1,9 +1,5 @@
 package org.example.lesson_11
 
-fun main() {
-
-}
-
 class Category(
     val id: Int,
     val name: String,
