@@ -34,14 +34,14 @@ class Forum {
 
         println("Напишите сообщение:")
         val newMessage = ForumMessage(userId, readln())
-        forumMembersList.forEach{ member: ForumMember ->
+        forumMembersList.forEach { member: ForumMember ->
             if (member.userId == userId) messageHistory.add("${member.userName}: ${newMessage.message}")
         }
     }
 
     fun printThread() {
         println("\nВывод всех сообщений форума:")
-        messageHistory.forEach{ message: String ->
+        messageHistory.forEach { message: String ->
             println(message)
         }
     }
