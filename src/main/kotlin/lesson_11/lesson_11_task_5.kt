@@ -3,8 +3,8 @@ package org.example.lesson_11
 fun main() {
     val forum = Forum()
 
-    forum.createNewUser("Михаил")
-    forum.createNewUser("Кирилл")
+    forum.createNewUser("автор1")
+    forum.createNewUser("автор2")
 
     forum.createNewMessage(1)
     forum.createNewMessage(2)
@@ -32,8 +32,7 @@ class Forum {
             return
         }
 
-        println("Напишите сообщение:")
-        val newMessage = ForumMessage(userId, readln())
+        val newMessage = ForumMessage(userId, "сообщение")
         forumMembersList.forEach { member: ForumMember ->
             if (member.userId == userId) messageHistory.add("${member.userName}: ${newMessage.message}")
         }
