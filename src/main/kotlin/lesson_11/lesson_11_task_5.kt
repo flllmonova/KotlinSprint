@@ -32,7 +32,8 @@ class Forum {
             return
         }
 
-        val newMessage = ForumMessage(userId, "сообщение")
+        println("Напишите сообщение:")
+        val newMessage = ForumMessage(userId)
         forumMembersList.forEach { member: ForumMember ->
             if (member.userId == userId) messageHistory.add("${member.userName}: ${newMessage.message}")
         }
@@ -53,5 +54,5 @@ class ForumMember(
 
 class ForumMessage(
     val authorId: Int,
-    val message: String,
+    val message: String = readln(),
 )
