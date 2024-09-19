@@ -2,19 +2,19 @@ package org.example.lesson_12
 
 fun main() {
 
-    val weatherForToday = WeatherDataForOneDay()
-    val weatherForTomorrow = WeatherDataForOneDay()
+    val todayWeather = WeatherDataForOneDay()
+    val tomorrowWeather = WeatherDataForOneDay()
 
-    weatherForToday.daytimeTemperature = "+12"
-    weatherForToday.nightTemperature = "+4"
-    weatherForToday.isTherePrecipitation = true
+    todayWeather.daytimeTemperature = "+12"
+    todayWeather.nightTemperature = "+4"
+    todayWeather.isTherePrecipitation = true
 
-    weatherForTomorrow.daytimeTemperature = "+19"
-    weatherForTomorrow.nightTemperature = "+6"
-    weatherForTomorrow.isTherePrecipitation = false
+    tomorrowWeather.daytimeTemperature = "+19"
+    tomorrowWeather.nightTemperature = "+6"
+    tomorrowWeather.isTherePrecipitation = false
 
-    weatherForToday.printData()
-    weatherForTomorrow.printData()
+    todayWeather.printData()
+    tomorrowWeather.printData()
 }
 
 class WeatherDataForOneDay {
