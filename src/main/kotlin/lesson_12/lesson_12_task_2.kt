@@ -1,13 +1,13 @@
 package org.example.lesson_12
 
 fun main() {
-    val todayWeather = WeatherDataForDay("+25", "+19", true)
+    val todayWeather = WeatherDataForDay(25, 19, true)
     todayWeather.printData()
 }
 
 class WeatherDataForDay(
-    val daytimeTemperature: String,
-    val nightTemperature: String,
+    val daytimeTemperature: Int,
+    val nightTemperature: Int,
     val isTherePrecipitation: Boolean,
 ) {
     fun printData() {
