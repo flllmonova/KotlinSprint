@@ -27,8 +27,8 @@ fun main() {
         precipitationForMonthList.add(day.isTherePrecipitation)
     }
 
-    val averageValueOfDaytimeTemperaturesForMonth = daytimeTemperaturesForMonthList.average().toInt()
-    val averageValueNightTemperaturesForMonth = nightTemperaturesForMonthList.average().toInt()
+    val averageDaytimeTemperatureForMonth = daytimeTemperaturesForMonthList.average().toInt()
+    val averageNightTemperatureForMonth = nightTemperaturesForMonthList.average().toInt()
 
     var daysNumberWithPrecipitation = 0
     precipitationForMonthList.forEach { isTherePrecipitation: Boolean ->
@@ -38,8 +38,8 @@ fun main() {
     println(
         """
         Показатели за месяц
-        Средняя температура днём: $averageValueOfDaytimeTemperaturesForMonth°C
-        Средняя температура ночью: $averageValueNightTemperaturesForMonth°C
+        Средняя температура днём: $averageDaytimeTemperatureForMonth°C
+        Средняя температура ночью: $averageNightTemperatureForMonth°C
         Количество дней с осадками: $daysNumberWithPrecipitation
     """.trimIndent()
     )
