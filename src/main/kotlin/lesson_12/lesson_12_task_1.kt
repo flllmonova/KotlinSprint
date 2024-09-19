@@ -2,8 +2,8 @@ package org.example.lesson_12
 
 fun main() {
 
-    val weatherForToday = WeatherDataForDay()
-    val weatherForTomorrow = WeatherDataForDay()
+    val weatherForToday = WeatherDataForOneDay()
+    val weatherForTomorrow = WeatherDataForOneDay()
 
     weatherForToday.daytimeTemperature = "+12"
     weatherForToday.nightTemperature = "+4"
@@ -17,7 +17,7 @@ fun main() {
     weatherForTomorrow.printData()
 }
 
-class WeatherDataForDay {
+class WeatherDataForOneDay {
 
     var daytimeTemperature = "+21"
     var nightTemperature = "+5"
