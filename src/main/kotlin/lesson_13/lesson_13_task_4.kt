@@ -2,7 +2,7 @@ package org.example.lesson_13
 
 fun main() {
 
-    val phoneBook: MutableList<ContactInformation> = mutableListOf()
+    val phoneBook: MutableList<ContactInfo> = mutableListOf()
 
     while (true) {
         println("Заполните контактные данные \nВведите имя:")
@@ -20,20 +20,20 @@ fun main() {
             if (it == "") null else it
         }
 
-        phoneBook.add(ContactInformation(name, phoneNumber, companyName))
+        phoneBook.add(ContactInfo(name, phoneNumber, companyName))
         println("Контакт сохранен. \nЖелаете записать еще один контакт? [ Да / Нет ]")
         if (readln().equals("нет", ignoreCase = true)) break
     }
 
     println("Ваша телефонная книга:")
     var contactCounter = 1
-    phoneBook.forEach { contact: ContactInformation ->
+    phoneBook.forEach { contact: ContactInfo ->
         println("Контакт №${contactCounter++}")
         contact.printData()
     }
 }
 
-class ContactInformation(
+class ContactInfo(
     val name: String,
     val phoneNumber: Long,
     val companyName: String? = null,
