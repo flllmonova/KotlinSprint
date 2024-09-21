@@ -9,10 +9,8 @@ fun main() {
     val contact5 = ContactDetails("Кирилл", 79174471912)
 
     val contactsList = listOf(contact1, contact2, contact3, contact4, contact5)
-    val companiesList: MutableList<String> = mutableListOf()
-
-    contactsList.forEach { contact: ContactDetails ->
-        if (contact.companyName != null) companiesList.add(contact.companyName)
+    val companiesList = contactsList.mapNotNull {
+        it.companyName
     }
 
     println(companiesList)
