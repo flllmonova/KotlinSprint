@@ -17,24 +17,21 @@ fun main() {
         weatherDataForMonthList.add(weatherDataForDay)
     }
 
-    val daytimeTemperaturesForMonthList: MutableList<Int> = mutableListOf()
-    val nightTemperaturesForMonthList: MutableList<Int> = mutableListOf()
-    val precipitationForMonthList: MutableList<Boolean> = mutableListOf()
-
-    weatherDataForMonthList.forEach { day: WeatherDataForDay ->
-        daytimeTemperaturesForMonthList.add(day.daytimeTemperature)
-        nightTemperaturesForMonthList.add(day.nightTemperature)
-        precipitationForMonthList.add(day.isTherePrecipitation)
+    val daytimeTemperaturesForMonthList = weatherDataForMonthList.map { day: WeatherDataForDay ->
+        day.daytimeTemperature
+    }
+    val nightTemperaturesForMonthList = weatherDataForMonthList.map { day: WeatherDataForDay ->
+        day.nightTemperature
+    }
+    val precipitationForMonthList = weatherDataForMonthList.map { day: WeatherDataForDay ->
+        day.isTherePrecipitation
     }
 
     val averageDaytimeTemperatureForMonth = daytimeTemperaturesForMonthList.average().toInt()
     val averageNightTemperatureForMonth = nightTemperaturesForMonthList.average().toInt()
+    val daysNumberWithPrecipitation = precipitationForMonthList.count { it }
 
-    var daysNumberWithPrecipitation = 0
-    precipitationForMonthList.forEach { isTherePrecipitation: Boolean ->
-        if (isTherePrecipitation) ++daysNumberWithPrecipitation
-    }
-
+    println(precipitationForMonthList)
     println(
         """
         Показатели за месяц
