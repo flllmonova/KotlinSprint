@@ -6,10 +6,10 @@ fun main() {
     forum.createNewUser("автор1")
     forum.createNewUser("автор2")
 
-    forum.createNewMessage(1)
-    forum.createNewMessage(2)
-    forum.createNewMessage(1)
-    forum.createNewMessage(2)
+    forum.createNewMessage(ForumMessage(1))
+    forum.createNewMessage(ForumMessage(2))
+    forum.createNewMessage(ForumMessage(1))
+    forum.createNewMessage(ForumMessage(2))
 
     forum.printThread()
 }
@@ -26,16 +26,9 @@ class Forum {
         return newUser
     }
 
-    fun createNewMessage(userId: Int) {
-        if (userId !in 1..idGenerator) {
-            println("Вы не зарегистрированы на форуме")
-            return
-        }
-
-        println("Напишите сообщение:")
-        val newMessage = ForumMessage(userId)
+    fun createNewMessage(message: ForumMessage) {
         forumMembersList.forEach { member: ForumMember ->
-            if (member.userId == userId) messageHistory.add("${member.userName}: ${newMessage.message}")
+            if (message.authorId ==  member.userId) messageHistory.add("${member.userName}: ${message.message}")
         }
     }
 
