@@ -29,6 +29,7 @@ fun main() {
 
     val averageDaytimeTemperatureForMonth = daytimeTemperaturesForMonthList.average().toInt()
     val averageNightTemperatureForMonth = nightTemperaturesForMonthList.average().toInt()
+
     val daysNumberWithPrecipitation = precipitationForMonthList.count { it }
 
     println(
