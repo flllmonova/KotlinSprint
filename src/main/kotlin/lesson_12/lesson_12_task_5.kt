@@ -31,7 +31,6 @@ fun main() {
     val averageNightTemperatureForMonth = nightTemperaturesForMonthList.average().toInt()
     val daysNumberWithPrecipitation = precipitationForMonthList.count { it }
 
-    println(precipitationForMonthList)
     println(
         """
         Показатели за месяц
