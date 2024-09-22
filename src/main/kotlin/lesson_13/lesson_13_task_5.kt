@@ -4,7 +4,6 @@ fun main() {
     try {
         println("Введите номер телефона:")
         val phoneNumber: Long = readln().toLong()
-        println(phoneNumber)
     } catch (e: Exception) {
         println(e::class.simpleName)
     }
