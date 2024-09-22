@@ -1,8 +1,13 @@
 package org.example.lesson_13
 
 fun main() {
-    val number: Long? = readln().toLongOrNull()
-    println("NumberFormatException")
+    try {
+        println("Введите номер телефона:")
+        val phoneNumber: Long = readln().toLong()
+        println(phoneNumber)
+    } catch (e: Exception) {
+        println(e::class.simpleName)
+    }
 }
 
 class ContactInformation(
