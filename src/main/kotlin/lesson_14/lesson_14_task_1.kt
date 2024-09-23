@@ -10,7 +10,7 @@ open class Liner(
     val name: String = "Лайнер",
     val speed: Int = 56,
     val passengerCapacity: Int = 6_800,
-    val loadCapacity: Int = 200_00,
+    val loadCapacity: Int = 200_000,
 )
 
 class CargoShip : Liner(name = "Грузовой", speed = 35, passengerCapacity = 25, loadCapacity = 500_000)
