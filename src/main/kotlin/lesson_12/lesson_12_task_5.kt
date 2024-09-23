@@ -5,11 +5,11 @@ import kotlin.random.Random
 const val NUMBER_DAYS_IN_MONTH = 30
 
 fun main() {
-    val weatherDataForMonthList: MutableList<WeatherDataForDay> = mutableListOf()
+    val weatherDataForMonthList: MutableList<WeatherDataDay> = mutableListOf()
     val temperatureRangeInSummer = 10..35
 
     for (i in 1..NUMBER_DAYS_IN_MONTH) {
-        val weatherDataForDay = WeatherDataForDay(
+        val weatherDataForDay = WeatherDataDay(
             temperatureRangeInSummer.random(),
             temperatureRangeInSummer.random(),
             Random.nextBoolean()
@@ -17,13 +17,13 @@ fun main() {
         weatherDataForMonthList.add(weatherDataForDay)
     }
 
-    val daytimeTemperaturesForMonthList = weatherDataForMonthList.map { day: WeatherDataForDay ->
+    val daytimeTemperaturesForMonthList = weatherDataForMonthList.map { day: WeatherDataDay ->
         day.daytimeTemperature
     }
-    val nightTemperaturesForMonthList = weatherDataForMonthList.map { day: WeatherDataForDay ->
+    val nightTemperaturesForMonthList = weatherDataForMonthList.map { day: WeatherDataDay ->
         day.nightTemperature
     }
-    val precipitationForMonthList = weatherDataForMonthList.map { day: WeatherDataForDay ->
+    val precipitationForMonthList = weatherDataForMonthList.map { day: WeatherDataDay ->
         day.isTherePrecipitation
     }
 
