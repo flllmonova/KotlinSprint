@@ -46,7 +46,6 @@ class Circle(
 ) : Figure(color) {
 
     override fun findArea(): Float = (PI_NUMBER * radius.pow(2))
-
     override fun findPerimeter(): Float = (2 * PI_NUMBER * radius)
 }
 
