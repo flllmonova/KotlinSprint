@@ -8,14 +8,14 @@ fun main() {
 
 open class Liner(
     val name: String = "Лайнер",
-    val speed: Int = 500,
-    val capacity: Int = 25,
-    val loadCapacity: Int = 500,
+    val speed: Int = 56,
+    val passengerCapacity: Int = 6_800,
+    val loadCapacity: Int = 200_00,
 )
 
-class CargoShip : Liner(name = "Грузовой", speed = 250, capacity = 10, loadCapacity = 1000)
+class CargoShip : Liner(name = "Грузовой", speed = 35, passengerCapacity = 25, loadCapacity = 500_000)
 
-class IcebreakerShip : Liner(name = "Ледокол", speed = 250, capacity = 10, loadCapacity = 500) {
+class IcebreakerShip : Liner(name = "Ледокол", speed = 25, passengerCapacity = 128, loadCapacity = 21_000) {
     fun splitIce() {
         println("Расколоть лед")
     }
