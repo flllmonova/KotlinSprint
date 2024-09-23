@@ -5,14 +5,14 @@ import kotlin.math.pow
 const val PI_NUMBER = 3.14f
 
 fun main() {
-    val figuresList = listOf(
-        Circle(4.5f, "белый"),
-        Circle(6f, "черный"),
-        Circle(2.3f, "черный"),
-        Rectangle(4f, 8f, "черный"),
-        Rectangle(2.1f, 7.5f, "белый"),
-        Rectangle(5f, 4f, "белый")
-    )
+    val circle1 = Circle(4.5f, "белый")
+    val circle2 = Circle(6f, "черный")
+    val circle3 = Circle(2.3f, "черный")
+    val rect1 = Rectangle(4f, 8f, "черный")
+    val rect2 = Rectangle(2.1f, 7.5f, "белый")
+    val rect3 = Rectangle(5f, 4f, "белый")
+
+    val figuresList = listOf(circle1, circle2, circle3, rect1, rect2, rect3)
 
     val perimetersSumOfBlackFigures = figuresList
         .filter { figure: Figure -> figure.color == "черный" }
