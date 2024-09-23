@@ -24,8 +24,8 @@ open class ShipLiner(
             Данные судна:
             Название: $name
             Скорость: $speed км/ч
-            Пассажировместимость: ${thousandSeparator(passengerCapacity)} чел.
-            Грузоподъемность: ${thousandSeparator(loadCapacity)} т
+            Пассажировместимость: ${thousandsSeparator(passengerCapacity)} чел.
+            Грузоподъемность: ${thousandsSeparator(loadCapacity)} т
             
         """.trimIndent()
         )
@@ -48,4 +48,4 @@ class Icebreaker : ShipLiner(name = "Ледокол", speed = 25, passengerCapac
     }
 }
 
-fun thousandSeparator(number: Int): String = DecimalFormat("#,###").format(number)
+fun thousandsSeparator(number: Int): String = DecimalFormat("#,###").format(number)
