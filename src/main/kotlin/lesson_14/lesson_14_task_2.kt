@@ -52,6 +52,7 @@ class Icebreaker : ShipLiner(
     override fun loadCargo() {
         println("Открыть ворота со стороны кормы")
     }
+
     fun splitIce() {
         println("Расколоть лед")
     }
