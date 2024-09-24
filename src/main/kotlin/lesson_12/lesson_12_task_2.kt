@@ -1,11 +1,11 @@
 package org.example.lesson_12
 
 fun main() {
-    val todayWeather = WeatherDataForDay(25, 19, true)
+    val todayWeather = WeatherDataDay(25, 19, true)
     todayWeather.printData()
 }
 
-class WeatherDataForDay(
+class WeatherDataDay(
     val daytimeTemperature: Int,
     val nightTemperature: Int,
     val isTherePrecipitation: Boolean,
