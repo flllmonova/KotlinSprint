@@ -13,9 +13,9 @@ class WeatherData(
 ) {
 
     val daytimeTemperatureInCelsius =
-        (daytimeTemperatureInKelvin - NUMBER_OF_CELSIUS_DEGREES).toInt()
+        (daytimeTemperatureInKelvin - NUMBER_OF_CELSIUS_DEGREES_IN_ZERO_KELVIN_DEGREES).toInt()
     val nightTemperatureInCelsius =
-        (nightTemperatureInKelvin - NUMBER_OF_CELSIUS_DEGREES).toInt()
+        (nightTemperatureInKelvin - NUMBER_OF_CELSIUS_DEGREES_IN_ZERO_KELVIN_DEGREES).toInt()
     val isTherePrecipitation = _isTherePrecipitation
 
     init {
