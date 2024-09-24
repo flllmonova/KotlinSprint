@@ -13,9 +13,19 @@ open class Liner(
     val loadCapacity: Int = 200_000,
 )
 
-class CargoShip : Liner(name = "Грузовой корабль", speed = 35, passengerCapacity = 25, loadCapacity = 500_000)
+class CargoShip : Liner(
+    name = "Грузовой корабль",
+    speed = 35,
+    passengerCapacity = 25,
+    loadCapacity = 500_000,
+)
 
-class IcebreakerShip : Liner(name = "Ледокол", speed = 25, passengerCapacity = 128, loadCapacity = 21_000) {
+class IcebreakerShip : Liner(
+    name = "Ледокол",
+    speed = 25,
+    passengerCapacity = 128,
+    loadCapacity = 21_000
+) {
     fun splitIce() {
         println("Расколоть лед")
     }
