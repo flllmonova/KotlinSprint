@@ -32,13 +32,23 @@ open class ShipLiner(
     }
 }
 
-class Cargo : ShipLiner(name = "Грузовой корабль", speed = 35, passengerCapacity = 25, loadCapacity = 500_000) {
+class Cargo : ShipLiner(
+    name = "Грузовой корабль",
+    speed = 35,
+    passengerCapacity = 25,
+    loadCapacity = 500_000,
+) {
     override fun loadCargo() {
         println("Активировать погрузочный кран")
     }
 }
 
-class Icebreaker : ShipLiner(name = "Ледокол", speed = 25, passengerCapacity = 128, loadCapacity = 21_000) {
+class Icebreaker : ShipLiner(
+    name = "Ледокол",
+    speed = 25,
+    passengerCapacity = 128,
+    loadCapacity = 21_000
+) {
     override fun loadCargo() {
         println("Открыть ворота со стороны кормы")
     }
