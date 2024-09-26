@@ -3,7 +3,7 @@ package org.example.lesson_12
 const val NUMBER_OF_CELSIUS_DEGREES_IN_ZERO_KELVIN_DEGREES = 273.15
 
 fun main() {
-    val todayWeather = WeatherData(300, 295, false)
+    val todayWeather = DataOfWeather(300, 295, false)
 }
 
 class WeatherData(
@@ -13,9 +13,9 @@ class WeatherData(
 ) {
 
     val daytimeTemperatureInCelsius =
-        (daytimeTemperatureInKelvin - NUMBER_OF_CELSIUS_DEGREES_IN_ZERO_KELVIN_DEGREES).toInt()
+        (daytimeTemperatureInKelvin - NUMBER_OF_CELSIUS_DEGREES).toInt()
     val nightTemperatureInCelsius =
-        (nightTemperatureInKelvin - NUMBER_OF_CELSIUS_DEGREES_IN_ZERO_KELVIN_DEGREES).toInt()
+        (nightTemperatureInKelvin - NUMBER_OF_CELSIUS_DEGREES).toInt()
     val isTherePrecipitation = _isTherePrecipitation
 
     init {
