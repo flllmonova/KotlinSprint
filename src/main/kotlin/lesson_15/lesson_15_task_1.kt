@@ -26,7 +26,7 @@ interface Floating {
 }
 
 interface Flying {
-    fun fly()  {
+    fun fly() {
         println("летает")
     }
 }
