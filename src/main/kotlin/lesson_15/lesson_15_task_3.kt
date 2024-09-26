@@ -2,12 +2,14 @@ package org.example.lesson_15
 
 abstract class ForumMember {
     abstract val name: String
+    abstract val id: Int
     abstract fun readForum()
     abstract fun writeMessage()
 }
 
 class User(
     override val name: String,
+    override val id: Int,
 ) : ForumMember() {
 
     override fun readForum() {
@@ -21,6 +23,7 @@ class User(
 
 class Admin(
     override val name: String,
+    override val id: Int,
 ) : ForumMember() {
 
     override fun readForum() {
