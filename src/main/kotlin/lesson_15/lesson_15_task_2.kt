@@ -9,8 +9,7 @@ fun main() {
     weatherServer.sendData(precipitationAmountOfDay)
 }
 
-abstract class WeatherStationStats {
-}
+abstract class WeatherStationStats
 
 class Temperature(
     val dayTemperature: Int,
@@ -23,12 +22,10 @@ class PrecipitationAmount(
 
 class WeatherServer {
     fun sendData(data: WeatherStationStats) {
-        println(
-            when (data::class.simpleName) {
-                "Temperature" -> "Данные о температуре"
-                "PrecipitationAmount" -> "Данные об осадках"
-                else -> "Данные не распознаны и не"
-            } + " отправлены на сервер."
-        )
+        when (data::class.simpleName) {
+            "Temperature" -> println("Данные о температуре отправлены на сервер.")
+            "PrecipitationAmount" -> println("Данные об осадках отправлены на сервер.")
+            else -> println("Данные не распознаны и не отправлены на сервер.")
+        }
     }
 }
