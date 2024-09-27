@@ -3,10 +3,10 @@ package org.example.lesson_15
 fun main() {
     val transportation = Transportation()
     val passengersAmountForTransportation = 6
-    val cargoWeightIntTonsForTransportation = 2
+    val cargoWeightInTonsForTransportation = 2
 
     transportation.transportPassenger(passengersAmountForTransportation)
-    transportation.transportCargo(cargoWeightIntTonsForTransportation)
+    transportation.transportCargo(cargoWeightInTonsForTransportation)
 }
 
 class Transportation {
