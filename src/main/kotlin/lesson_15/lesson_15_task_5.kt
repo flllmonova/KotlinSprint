@@ -10,6 +10,7 @@ fun main() {
 }
 
 class Transportation {
+
     fun transportCargo(totalCargoWeight: Int) {
         val cargoCar = CargoCar(2, 1)
         val cargoCapacity = cargoCar.cargoCapacity
