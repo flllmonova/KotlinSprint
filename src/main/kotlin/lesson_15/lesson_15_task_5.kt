@@ -2,8 +2,8 @@ package org.example.lesson_15
 
 fun main() {
     val transportation = Transportation()
-    val passengersAmountForTransportation = 4
-    val cargoWeightIntTonsForTransportation = 3
+    val passengersAmountForTransportation = 6
+    val cargoWeightIntTonsForTransportation = 2
 
     transportation.transportPassenger(passengersAmountForTransportation)
     transportation.transportCargo(cargoWeightIntTonsForTransportation)
