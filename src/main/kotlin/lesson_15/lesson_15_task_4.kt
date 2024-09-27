@@ -14,7 +14,7 @@ class Instrument(
 class Component(
     name: String,
     stockBalance: Int,
-    val category: String = "Комплектующие",
+    val category: String = "Комплектующая",
 ) : Product(name, stockBalance)
 
 interface ComponentSearch {
