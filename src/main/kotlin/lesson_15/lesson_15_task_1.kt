@@ -5,18 +5,24 @@ fun main() {
     val carp = Carp()
     val seagull = Seagull()
 
-    println(carp.name)
-    carp.swim()
+    with(carp) {
+        println(name)
+        swim()
+    }
     println()
 
-    println(duck.name)
-    duck.fly()
-    duck.swim()
+    with(duck) {
+        println(name)
+        fly()
+        swim()
+    }
     println()
 
-    println(seagull.name)
-    seagull.fly()
-    seagull.swim()
+    with(seagull) {
+        println(name)
+        fly()
+        swim()
+    }
 }
 
 interface Floating {
