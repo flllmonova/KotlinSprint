@@ -35,15 +35,15 @@ class Transportation {
         }
     }
 
-    fun transportPassenger(passengersAmount: Int) {
+    fun transportPassenger(totalPassengersAmount: Int) {
         val passengerCar = PassengerCar(3)
         val passengerCapacity = passengerCar.passengerCapacity
 
         val listOfPassengerTransportation =
-            if (passengersAmount <= passengerCapacity) listOf(passengersAmount)
-            else MutableList(passengersAmount / passengerCapacity) { passengerCapacity }
+            if (totalPassengersAmount <= passengerCapacity) listOf(totalPassengersAmount)
+            else MutableList(totalPassengersAmount / passengerCapacity) { passengerCapacity }
                 .also {
-                    it.add(passengersAmount % passengerCapacity)
+                    it.add(totalPassengersAmount % passengerCapacity)
                     it.remove(0)
                 }
 
