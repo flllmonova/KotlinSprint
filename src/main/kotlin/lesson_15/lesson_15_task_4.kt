@@ -1,24 +1,24 @@
 package org.example.lesson_15
 
-abstract class Product {
-    abstract val name: String
-    abstract val stockBalance: Int
-}
+abstract class Product(
+    val name: String,
+    val stockBalance: Int,
+)
 
-class MusicalInstrument(
-    override val name: String,
-    override val stockBalance: Int,
+class Instrument(
+    name: String,
+    stockBalance: Int,
     val category: String = "Инструмент",
-) : Product(), ComponentsSearch
+) : Product(name, stockBalance), ComponentSearch
 
-class Components(
-    override val name: String,
-    override val stockBalance: Int,
+class Component(
+    name: String,
+    stockBalance: Int,
     val category: String = "Комплектующие",
-) : Product()
+) : Product(name, stockBalance)
 
-interface ComponentsSearch {
-    fun searchComponents() {
+interface ComponentSearch {
+    fun searchComponent() {
         println("Выполняется поиск")
     }
 }
