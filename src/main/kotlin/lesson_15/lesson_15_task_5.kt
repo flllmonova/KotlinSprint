@@ -60,10 +60,10 @@ class Transportation {
     }
 }
 
-abstract class Car(
-    val category: String,
+class PassengerCar(
     val passengerCapacity: Int,
-) : Movable {
+    val category: String = "легковой автомобиль",
+) : Movable, PassengerTransportation {
 
     override fun getToStartPoint() {
         println("Для поездки выбран: $category")
@@ -71,20 +71,17 @@ abstract class Car(
     }
 }
 
-class PassengerCar(
-    passengerCapacity: Int,
-) : Car(
-    category = "легковой автомобиль",
-    passengerCapacity,
-), PassengerTransportation
-
 class CargoCar(
     val cargoCapacity: Int,
-    passengerCapacity: Int,
-) : Car(
-    category = "грузовой автомобиль",
-    passengerCapacity,
-), PassengerTransportation, CargoTransportation
+    val passengerCapacity: Int,
+    val category: String = "грузовой автомобиль",
+) : Movable, PassengerTransportation, CargoTransportation {
+
+    override fun getToStartPoint() {
+        println("Для поездки выбран: $category")
+        super.getToStartPoint()
+    }
+}
 
 interface Movable {
 
