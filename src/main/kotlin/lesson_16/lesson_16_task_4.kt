@@ -9,7 +9,7 @@ class Order(
         orderStatus = _status
     }
 
-    fun sendRequestToManager(newStatus: String, order: Order) {
-        order.changeOrderStatus(newStatus)
+    fun sendRequestToManager(newStatus: String) {
+        changeOrderStatus(newStatus)
     }
 }
