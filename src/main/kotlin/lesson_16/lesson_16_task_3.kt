@@ -3,10 +3,11 @@ package org.example.lesson_16
 fun main() {
     val user1 = User("Standish")
     user1.setPassword()
+
 }
 
 class User(
-    val name: String,
+    val login: String,
 ) {
 
     private var password = ""
@@ -16,13 +17,8 @@ class User(
         password = readln()
     }
 
-//    fun getPassword(): String = password
-
-    fun validatePassword(password: String) {
-        val charsContOfRelevantPassword = 7
-        println(
-            if (password.length >= charsContOfRelevantPassword) "Пароль релевантен"
-            else "Пароль не релевантен. Его длина должна быть не менее $charsContOfRelevantPassword символов"
-        )
+    fun validatePassword(_password: String) {
+        if (password == _password) println("Пароль введен верно")
+        else println("Пароль введен не верно")
     }
 }
