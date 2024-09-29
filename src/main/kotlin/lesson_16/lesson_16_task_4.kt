@@ -5,11 +5,11 @@ class Order(
     var orderStatus: String,
 ) {
 
-    fun changeOrderStatus(_status: String) {
+    private fun changeOrderStatus(_status: String) {
         orderStatus = _status
     }
-}
 
-fun sendRequestToManager(newStatus: String, order: Order) {
-    order.changeOrderStatus(newStatus)
+    fun sendRequestToManager(newStatus: String, order: Order) {
+        order.changeOrderStatus(newStatus)
+    }
 }
