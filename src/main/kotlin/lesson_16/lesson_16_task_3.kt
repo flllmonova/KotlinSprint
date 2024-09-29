@@ -7,7 +7,7 @@ fun main() {
 }
 
 class User(
-    private val name: String,
+    val name: String,
 ) {
 
     private var password = ""
