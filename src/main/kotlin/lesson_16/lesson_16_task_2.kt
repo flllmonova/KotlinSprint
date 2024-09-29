@@ -16,4 +16,3 @@ class Circle(
 
     fun getCircumference(): Float = 2 * PI * radius
 }
-
