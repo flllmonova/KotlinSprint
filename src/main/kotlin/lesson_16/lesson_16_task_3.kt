@@ -2,7 +2,8 @@ package org.example.lesson_16
 
 fun main() {
     val user1 = User("Standish")
-    user1.setAndValidatePassword()
+    user1.setPassword()
+    validatePassword(user1.getPassword())
 }
 
 class User(
@@ -11,17 +12,19 @@ class User(
 
     private var password = ""
 
-    fun setAndValidatePassword() {
+    fun setPassword() {
         println("Установите пароль:")
         password = readln()
-        validatePassword(password)
+
     }
 
-    private fun validatePassword(password: String) {
-        val charsContOfRelevantPassword = 7
-        println(
-            if (password.length >= charsContOfRelevantPassword) "Пароль релевантен"
-            else "Пароль не релевантен. Его длина должна быть не менее $charsContOfRelevantPassword символов"
-        )
-    }
+    fun getPassword(): String = password
+}
+
+fun validatePassword(password: String) {
+    val charsContOfRelevantPassword = 7
+    println(
+        if (password.length >= charsContOfRelevantPassword) "Пароль релевантен"
+        else "Пароль не релевантен. Его длина должна быть не менее $charsContOfRelevantPassword символов"
+    )
 }
