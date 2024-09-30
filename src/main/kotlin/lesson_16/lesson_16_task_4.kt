@@ -2,7 +2,7 @@ package org.example.lesson_16
 
 class Order(
     val orderNumber: Long,
-    var orderStatus: String,
+    private var orderStatus: String,
 ) {
 
     private fun changeOrderStatus(_status: String) {
