@@ -4,22 +4,14 @@ fun main() {
     val player1 = Player("Aeqepth", 5)
     val player2 = Player("Itra", 50)
 
-    player1.hit(player2)
+    player2.getDamaged(player1.hit())
 
-    player2.hit(player1)
+    player1.getDamaged(player2.hit())
+    player1.restoreHealth()
+    player1.getDamaged(player2.hit())
+    player1.getDamaged(player2.hit())
 
-    player1.run {
-        hit(player2)
-        hit(player2)
-        hit(player2)
-        restoreHealth()
-    }
-
-    player2.run {
-        hit(player1)
-        hit(player1)
-        restoreHealth()
-    }
+    player2.restoreHealth()
 }
 
 class Player(
@@ -33,19 +25,21 @@ class Player(
         println("Создан игрок $name")
     }
 
-    fun hit(enemy: Player) {
-        enemy.health -= hitForce
-        println("Игрок $name нанес урон игроку ${enemy.name} -$hitForce")
+    fun getDamaged(enemyHit: Int) {
+        health -= enemyHit
+        println("Игроку $name нанесен урон -$enemyHit")
 
-        if (enemy.health <= 0) {
-            println("Игрок ${enemy.name} умер")
-            die(enemy)
+        if (health <= 0) {
+            println("Игрок ${name} умер")
+            die()
         }
     }
 
+    fun hit(): Int = hitForce
+
     fun restoreHealth() {
         if (health == 0) {
-            println("Восстановление здоровья невозможно")
+            println("Восстановление здоровья для игрока $name невозможно")
             return
         }
 
@@ -53,8 +47,8 @@ class Player(
         println("Игрок $name восстановил здоровье")
     }
 
-    private fun die(player: Player) {
-        player.health = 0
-        player.hitForce = 0
+    private fun die() {
+        health = 0
+        hitForce = 0
     }
 }
