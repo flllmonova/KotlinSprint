@@ -25,6 +25,8 @@ class Player(
         println("Создан игрок $name")
     }
 
+    fun hit(): Int = hitForce
+
     fun getDamaged(enemyHit: Int) {
         health -= enemyHit
         println("Игроку $name нанесен урон -$enemyHit")
@@ -34,8 +36,6 @@ class Player(
             die()
         }
     }
-
-    fun hit(): Int = hitForce
 
     fun restoreHealth() {
         if (health == 0) {
