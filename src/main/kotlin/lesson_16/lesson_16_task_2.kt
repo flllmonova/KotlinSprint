@@ -12,7 +12,7 @@ class Circle(
     private val radius: Float,
 ) {
 
-    val area get() = radius * radius * PI
+    val area get() = this.radius * this.radius * PI
 
-    val circumference get() = 2 * PI * radius
+    val circumference get() = 2 * PI * this.radius
 }
