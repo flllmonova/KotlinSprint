@@ -4,15 +4,16 @@ private const val PI = 3.14f
 
 fun main() {
     val circle = Circle(2.5f)
-    println(String.format("Площадь круга: %.2f", circle.getArea()))
-    println(String.format("Длина окружности: %.2f", circle.getCircumference()))
+    println(String.format("Площадь круга: %.2f", circle.area))
+    println(String.format("Длина окружности: %.2f", circle.circumference))
 }
 
 class Circle(
     private val radius: Float,
 ) {
+    val area: Float
+        get() = radius * radius * PI
 
-    fun getArea(): Float = PI * radius * radius
-
-    fun getCircumference(): Float = 2 * PI * radius
+    val circumference: Float
+        get() = 2 * PI * radius
 }
