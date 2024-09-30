@@ -11,9 +11,8 @@ fun main() {
 class Circle(
     private val radius: Float,
 ) {
-    val area: Float
-        get() = radius * radius * PI
 
-    val circumference: Float
-        get() = 2 * PI * radius
+    val area get() = radius * radius * PI
+
+    val circumference get() = 2 * PI * radius
 }
