@@ -8,5 +8,7 @@ class QuizElement(
         get() = field
     var answer = _answer
         get() = field
-        set(value) { field = value }
+        set(value) {
+            field = value
+        }
 }
