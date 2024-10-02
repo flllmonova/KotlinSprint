@@ -8,9 +8,7 @@ fun main() {
 
     val dicesList: List<Dice> = listOf(dice1, dice2, dice3)
 
-    dicesList.forEach {
-        it.throwDice()
-    }
+    dicesList.forEach { it.throwDice() }
 }
 
 open class Dice {
