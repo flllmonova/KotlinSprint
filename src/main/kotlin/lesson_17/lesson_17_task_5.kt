@@ -6,6 +6,7 @@ fun main() {
         println(login)
         login = "Ra"
         println(login)
+
         println(password)
         password = "adf_124"
     }
@@ -22,10 +23,6 @@ class User(
         }
 
     var password = _password
-        get() {
-            return Array(field.length) { "*" }.joinToString("")
-        }
-        set(value) {
-            println("Вы не можете изменить пароль")
-        }
+        get() = Array(field.length) { "*" }.joinToString("")
+        set(value) = println("Вы не можете изменить пароль")
 }
