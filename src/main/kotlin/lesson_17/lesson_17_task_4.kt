@@ -19,7 +19,5 @@ class Parcel(
 
     private var movementCounter: Int = 0
 
-    fun getNumberOfParcelMoves() {
-        println("Число перемещений: $movementCounter")
-    }
+    fun getNumberOfParcelMoves() = println("Число перемещений: $movementCounter")
 }
