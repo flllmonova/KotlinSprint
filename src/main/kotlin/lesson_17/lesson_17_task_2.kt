@@ -11,7 +11,5 @@ class Ship(
     val homePort: String,
 ) {
     var name = _name
-        set(value) {
-            println("Вы не можете поменять имя корабля")
-        }
+        set(value) = println("Вы не можете поменять имя корабля")
 }
