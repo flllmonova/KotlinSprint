@@ -7,8 +7,8 @@ fun main() {
 
 class Ship(
     _name: String,
-    var averageScore: Int,
-    var homePort: String,
+    val averageScore: Int,
+    val homePort: String,
 ) {
     var name = _name
         set(value) {
