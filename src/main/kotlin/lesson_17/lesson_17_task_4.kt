@@ -1,17 +1,20 @@
 package org.example.lesson_17
 
 fun main() {
-    val parcel = Parcel(562455695, "Москва")
-    parcel.getNumberOfParcelMoves()
-    parcel.parcelCurrentLocation = "Уфа"
-    parcel.getNumberOfParcelMoves()
+    val parcel = Packet(562455695, "Москва")
+
+    parcel.run {
+        getNumberOfPacketMoves()
+        packetCurrentLocation = "Уфа"
+        getNumberOfPacketMoves()
+    }
 }
 
-class Parcel(
-    val parcelNumber: Long,
-    _parcelCurrentLocation: String,
+class Packet(
+    val packetNumber: Long,
+    _packetCurrentLocation: String,
 ) {
-    var parcelCurrentLocation = _parcelCurrentLocation
+    var packetCurrentLocation = _packetCurrentLocation
         set(value) {
             field = value
             ++movementCounter
@@ -19,5 +22,5 @@ class Parcel(
 
     private var movementCounter: Int = 0
 
-    fun getNumberOfParcelMoves() = println("Число перемещений: $movementCounter")
+    fun getNumberOfPacketMoves() = println("Число перемещений: $movementCounter")
 }
