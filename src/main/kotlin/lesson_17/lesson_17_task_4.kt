@@ -1,9 +1,9 @@
 package org.example.lesson_17
 
 fun main() {
-    val parcel = Packet(562455695, "Москва")
+    val packet = Packet(562455695, "Москва")
 
-    parcel.run {
+    packet.run {
         getNumberOfPacketMoves()
         packetCurrentLocation = "Уфа"
         getNumberOfPacketMoves()
