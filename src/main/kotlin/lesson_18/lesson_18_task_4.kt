@@ -1,24 +1,24 @@
 package org.example.lesson_18
 
-abstract class Parcel {
+abstract class Box {
 
     abstract fun getSurfacesArea(): Float
 }
 
-class CubicParcel(
+class CubicBox(
     private val edge: Float,
-) : Parcel() {
+) : Box() {
 
     private val sidesAmount = 6
 
     override fun getSurfacesArea(): Float = edge * edge * sidesAmount
 }
 
-class RectangularParcel(
+class RectangularBox(
     private val length: Float,
     private val width: Float,
     private val height: Float,
-) : Parcel() {
+) : Box() {
 
     override fun getSurfacesArea(): Float = 2 * ((length * width) + (length * height) + (width * height))
 }
