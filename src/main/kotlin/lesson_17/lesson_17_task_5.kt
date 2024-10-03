@@ -23,6 +23,6 @@ class User(
         }
 
     var password = _password
-        get() = Array(field.length) { "*" }.joinToString("")
+        get() = "*".repeat(field.length)
         set(value) = println("Вы не можете изменить пароль")
 }
