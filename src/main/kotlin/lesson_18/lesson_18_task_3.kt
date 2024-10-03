@@ -7,9 +7,7 @@ fun main() {
 
     val animalsList: List<Animal> = listOf(fox, dog, cat)
 
-    animalsList.forEach {
-        it.eat()
-    }
+    animalsList.forEach { it.eat() }
 }
 
 open class Animal(
