@@ -11,12 +11,15 @@ fun main() {
     dicesList.forEach { it.throwDice() }
 }
 
-open class Dice {
-    open fun throwDice() {}
+abstract class Dice {
+
+    abstract val sidesAmount: Int
+
+    abstract fun throwDice()
 }
 
 class FourSidedDice : Dice() {
-    private val sidesAmount = 4
+    override val sidesAmount = 4
 
     override fun throwDice() {
         val number = (1..sidesAmount).random()
@@ -25,19 +28,19 @@ class FourSidedDice : Dice() {
 }
 
 class SixSidedDice : Dice() {
-    private val sidesAmount = 6
+    override val sidesAmount = 6
 
     override fun throwDice() {
         val number = (1..sidesAmount).random()
-        println("На $sidesAmount-х гранной игральной кости выпало число $number")
+        println("На $sidesAmount-и гранной игральной кости выпало число $number")
     }
 }
 
 class EightSidedDice : Dice() {
-    private val sidesAmount = 8
+    override val sidesAmount = 8
 
     override fun throwDice() {
         val number = (1..sidesAmount).random()
-        println("На $sidesAmount-х гранной игральной кости выпало число $number")
+        println("На $sidesAmount-и гранной игральной кости выпало число $number")
     }
 }
