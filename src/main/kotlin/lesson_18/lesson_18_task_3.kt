@@ -10,12 +10,12 @@ fun main() {
     for (animal in animalsList) { animal.eat() }
 }
 
-open class Animal(
+abstract class Animal(
     val name: String,
 ) {
-    open fun eat() {}
+    abstract fun eat()
 
-    open fun sleep() {}
+    abstract fun sleep()
 }
 
 class Fox(
