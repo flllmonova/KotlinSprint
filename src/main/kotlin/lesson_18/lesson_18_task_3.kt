@@ -7,7 +7,9 @@ fun main() {
 
     val animalsList: List<Animal> = listOf(fox, dog, cat)
 
-    for (animal in animalsList) { animal.eat() }
+    for (animal in animalsList) {
+        animal.eat()
+    }
 }
 
 abstract class Animal(
