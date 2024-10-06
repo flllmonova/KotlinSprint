@@ -11,6 +11,6 @@ class Spaceship(
     }
 
     fun shootBackFromAnAsteroid() {
-    // TODO добавить информацию о дополнительной логике }
+        // TODO добавить информацию о дополнительной логике
     }
 }
