@@ -13,7 +13,7 @@ enum class Gender(val abbreviatedFormOfGender: String) {
     WOMAN("Ж"),
     MAN("М");
 
-    fun getFullFormOfGender(): String = when(this) {
+    fun getFullFormOfGender(): String = when (this) {
         Gender.MAN -> "мужской"
         Gender.WOMAN -> "женский"
     }
@@ -35,7 +35,8 @@ class CardFile {
     }
 
     fun getInstructionToFillOutCard() {
-        println("""
+        println(
+            """
             Инструкция по заполнению карточки:
             - не использовать специальные символы в имени;
             - имя следует писать с заглавной буквы, остальные буквы - строчные; 
@@ -43,7 +44,8 @@ class CardFile {
             - для указания пола введите соответствующую заглавную кириллическую букву: 
             "${Gender.MAN.abbreviatedFormOfGender}" / "${Gender.WOMAN.abbreviatedFormOfGender}".
         
-        """.trimIndent())
+        """.trimIndent()
+        )
     }
 
     fun fillOutCard() {
@@ -57,11 +59,10 @@ class CardFile {
                 if (name.length >= minNameLength &&
                     name.all { it !in specialCharsRange } &&
                     name[0].isUpperCase() &&
-                    name.drop(1).all { it.isLowerCase() }) {
+                    name.drop(1).all { it.isLowerCase() }
+                ) {
                     break
-                } else {
-                    println("Имя введено неверно, введите снова")
-                }
+                } else println("Имя введено неверно, введите снова")
             } while (true)
 
             println("Введите пол:")
@@ -76,16 +77,16 @@ class CardFile {
                     cardFile.add(Person(name, gender))
                     break
                 } else println("Пол введен неверно, введите еще раз:")
-            } while(true)
+            } while (true)
 
-            if (cardFile.size %cardsAmountForPrint == 0) {
+            if (cardFile.size % cardsAmountForPrint == 0) {
                 println()
                 printCardFile()
                 println()
             }
 
             println("Желаете заполнить еще одну карточку? [ да / нет ]")
-            if(readln().equals("нет", ignoreCase = true)) {
+            if (readln().equals("нет", ignoreCase = true)) {
                 println("Приложение \"Картотека\" закрывается")
                 break
             }
