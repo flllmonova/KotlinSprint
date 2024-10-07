@@ -27,7 +27,7 @@ enum class Category {
     CLOTHES,
     DIFFERENT;
 
-    fun getCategoryName() = when(this) {
+    fun getCategoryName() = when (this) {
         OFFICE_SUPPLIES -> "Одежда"
         CLOTHES -> "Канцелярские товары"
         DIFFERENT -> "Разное"
