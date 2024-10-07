@@ -21,17 +21,16 @@ fun main() {
         listOf("75 мм пушка wK-42", "7.92 мм пулемёт"),
     )
 
-    tank1.armWithGreenBullets()
-    tank1.armWithRedBullets()
-    tank2.armWithBlueBullets()
+    tank1.armWithBullets(Bullet.RED_BULLET)
+    tank1.armWithBullets(Bullet.GREEN_BULLET)
+    tank2.armWithBullets(Bullet.BLUE_BULLET)
 
-    tank2.getDamageToSideArmor(tank1.shootRedBullets())
-    tank2.getDamageToFrontalArmor(tank1.shootGreenBullets())
-    tank1.getDamageToSideArmor(tank2.shootBlueBullets())
-    tank1.getDamageToFrontalArmor(tank2.shootRedBullets())
+    tank2.getDamageToFrontalArmor(tank1.shoot(Bullet.RED_BULLET))
+    tank2.getDamageToSideArmor(tank1.shoot(Bullet.GREEN_BULLET))
+    tank1.getDamageToSideArmor(tank2.shoot(Bullet.BLUE_BULLET))
 }
 
-enum class BULLET(val bulletName: String, val impactForce: Int) {
+enum class Bullet(val bulletName: String, val impactForce: Int) {
     BLUE_BULLET("синие патроны",5),
     GREEN_BULLET("зеленые патроны",10),
     RED_BULLET("красные патроны",20),
@@ -51,42 +50,31 @@ class Tank(
     }
 
     private var isDestroyed = false
-    private val ammunition: MutableList<BULLET> = mutableListOf()
+    private val ammunition: MutableList<Bullet> = mutableListOf()
 
-    fun shootBlueBullets(): Int = if (BULLET.BLUE_BULLET in ammunition) BULLET.BLUE_BULLET.impactForce else 0
+    fun shoot(bullets: Bullet): Int {
+        if (bullets !in ammunition) return 0
 
-    fun shootGreenBullets() = if (BULLET.GREEN_BULLET in ammunition) BULLET.GREEN_BULLET.impactForce else 0
-
-    fun shootRedBullets() = if (BULLET.RED_BULLET in ammunition) BULLET.RED_BULLET.impactForce else 0
-
-    fun armWithBlueBullets() {
-        if (BULLET.BLUE_BULLET in ammunition) {
-            println("В боекомплект танка $name уже добавлены ${BULLET.BLUE_BULLET.bulletName}")
-            return
+        return when(bullets) {
+            Bullet.RED_BULLET -> Bullet.RED_BULLET.impactForce
+            Bullet.GREEN_BULLET -> Bullet.GREEN_BULLET.impactForce
+            Bullet.BLUE_BULLET -> Bullet.BLUE_BULLET.impactForce
         }
-
-        ammunition.add(BULLET.BLUE_BULLET)
-        println("В боекомплект танка $name добавлены ${BULLET.BLUE_BULLET.bulletName}")
     }
 
-    fun armWithGreenBullets() {
-        if (BULLET.GREEN_BULLET in ammunition) {
-            println("В боекомплект танка $name уже добавлены ${BULLET.GREEN_BULLET.bulletName}")
-            return
+    fun armWithBullets(bullets: Bullet) {
+        val bulletsName = when(bullets) {
+            Bullet.RED_BULLET -> Bullet.RED_BULLET.bulletName
+            Bullet.GREEN_BULLET -> Bullet.GREEN_BULLET.bulletName
+            Bullet.BLUE_BULLET -> Bullet.BLUE_BULLET.bulletName
         }
 
-        ammunition.add(BULLET.GREEN_BULLET)
-        println("В боекомплект танка $name добавлены ${BULLET.GREEN_BULLET.bulletName}")
-    }
-
-    fun armWithRedBullets() {
-        if (BULLET.RED_BULLET in ammunition) {
-            println("В боекомплект танка $name уже добавлены ${BULLET.RED_BULLET.bulletName}")
-            return
+        if (bullets in ammunition) {
+            println("В боекомплект танка $name уже добавлены $bulletsName")
+        } else {
+            ammunition.add(bullets)
+            println("В боекомплект танка $name добавлены $bulletsName")
         }
-
-        ammunition.add(BULLET.RED_BULLET)
-        println("В боекомплект танка $name добавлены ${BULLET.RED_BULLET.bulletName}")
     }
 
     fun getDamageToFrontalArmor(damage: Int) {
