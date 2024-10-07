@@ -8,6 +8,7 @@ fun main() {
     println("""
         Добро пожаловать в приложение "Картотека"!
         Инструкция по заполнению карточки:
+        - не использовать специальные символы в имени;
         - имя следует писать с заглавной буквы, остальные буквы - строчные; 
         - минимальное количество символов в имени: $minNameLength;
         - для указания пола введите соответствующую заглавную кириллическую букву: "М" / "Ж".
@@ -19,7 +20,12 @@ fun main() {
         println("Введите имя:")
         do {
             name = readln()
-            if (name.length >= minNameLength && name[0].isUpperCase() && name.drop(1).all { it.isLowerCase() }) {
+            val specialCharsRange = ' '..'/'
+
+            if (name.length >= minNameLength &&
+                name.all { it !in specialCharsRange } &&
+                name[0].isUpperCase() &&
+                name.drop(1).all { it.isLowerCase() }) {
                 break
             } else {
                 println("Имя введено неверно, введите снова")
@@ -37,9 +43,7 @@ fun main() {
                 println("Карточка создана!")
                 cardFile.add(Person(name, gender))
                 break
-            } else {
-                println("Пол введен неверно, введите еще раз:")
-            }
+            } else println("Пол введен неверно, введите еще раз:")
         } while(true)
 
         if (cardFile.size %cardsAmount == 0) {
@@ -48,7 +52,7 @@ fun main() {
             println()
         }
 
-        println("Желаете заполнить еще одну? [ да / нет ]")
+        println("Желаете заполнить еще одну карточку? [ да / нет ]")
         if(readln().equals("нет", ignoreCase = true)) {
             println("Приложение \"Картотека\" закрывается")
             break
