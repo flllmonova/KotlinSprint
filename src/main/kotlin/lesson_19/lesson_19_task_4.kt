@@ -31,9 +31,9 @@ fun main() {
 }
 
 enum class Bullet(val bulletName: String, val impactForce: Int) {
-    BLUE_BULLET("синие патроны",5),
-    GREEN_BULLET("зеленые патроны",10),
-    RED_BULLET("красные патроны",20),
+    BLUE_BULLET("синие патроны", 5),
+    GREEN_BULLET("зеленые патроны", 10),
+    RED_BULLET("красные патроны", 20),
 }
 
 class Tank(
@@ -55,7 +55,7 @@ class Tank(
     fun shoot(bullets: Bullet): Int {
         if (bullets !in ammunition) return 0
 
-        return when(bullets) {
+        return when (bullets) {
             Bullet.RED_BULLET -> Bullet.RED_BULLET.impactForce
             Bullet.GREEN_BULLET -> Bullet.GREEN_BULLET.impactForce
             Bullet.BLUE_BULLET -> Bullet.BLUE_BULLET.impactForce
@@ -63,7 +63,7 @@ class Tank(
     }
 
     fun armWithBullets(bullets: Bullet) {
-        val bulletsName = when(bullets) {
+        val bulletsName = when (bullets) {
             Bullet.RED_BULLET -> Bullet.RED_BULLET.bulletName
             Bullet.GREEN_BULLET -> Bullet.GREEN_BULLET.bulletName
             Bullet.BLUE_BULLET -> Bullet.BLUE_BULLET.bulletName
