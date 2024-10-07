@@ -59,16 +59,6 @@ class Tank(
 
     fun shootRedBullets() = if (BULLET.RED_BULLET in ammunition) BULLET.RED_BULLET.impactForce else 0
 
-    fun armWithRedBullets() {
-        if (BULLET.RED_BULLET in ammunition) {
-            println("В боекомплект танка $name уже добавлены ${BULLET.RED_BULLET.bulletName}")
-            return
-        }
-
-        ammunition.add(BULLET.RED_BULLET)
-        println("В боекомплект танка $name добавлены ${BULLET.RED_BULLET.bulletName}")
-    }
-
     fun armWithBlueBullets() {
         if (BULLET.BLUE_BULLET in ammunition) {
             println("В боекомплект танка $name уже добавлены ${BULLET.BLUE_BULLET.bulletName}")
@@ -87,6 +77,16 @@ class Tank(
 
         ammunition.add(BULLET.GREEN_BULLET)
         println("В боекомплект танка $name добавлены ${BULLET.GREEN_BULLET.bulletName}")
+    }
+
+    fun armWithRedBullets() {
+        if (BULLET.RED_BULLET in ammunition) {
+            println("В боекомплект танка $name уже добавлены ${BULLET.RED_BULLET.bulletName}")
+            return
+        }
+
+        ammunition.add(BULLET.RED_BULLET)
+        println("В боекомплект танка $name добавлены ${BULLET.RED_BULLET.bulletName}")
     }
 
     fun getDamageToFrontalArmor(damage: Int) {
