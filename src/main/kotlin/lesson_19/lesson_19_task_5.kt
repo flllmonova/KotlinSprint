@@ -50,6 +50,7 @@ class CardFile {
 
     fun fillOutCard() {
         do {
+
             var name = ""
             println("Введите имя:")
             do {
@@ -66,7 +67,6 @@ class CardFile {
             } while (true)
 
             println("Введите пол:")
-
             do {
                 val genderInput = readln()
                 val listOfGenderAbbreviatedForm = Gender.entries.map { it.abbreviatedFormOfGender }
@@ -90,6 +90,7 @@ class CardFile {
                 println("Приложение \"Картотека\" закрывается")
                 break
             }
+
         } while (true)
     }
 
