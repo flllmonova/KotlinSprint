@@ -25,5 +25,7 @@ class Robot {
 
     fun say() = println(modifier(getRandomPhrase()))
 
-    fun setModifier(_modifier: (String) -> String) { modifier = _modifier }
+    fun setModifier(_modifier: (String) -> String) {
+        modifier = _modifier
+    }
 }
