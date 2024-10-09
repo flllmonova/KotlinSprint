@@ -2,6 +2,7 @@ package org.example.lesson_20
 
 fun main() {
     val robot = Robot()
+
     robot.run {
         say()
         setModifier { it.reversed() }
