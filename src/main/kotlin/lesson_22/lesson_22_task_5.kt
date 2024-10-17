@@ -9,7 +9,7 @@ fun main() {
         "Главный космопорт с огромным торговым центром беспошлинной торговли",
         LocalDateTime.of(2083, Month.MARCH, 14, 17, 0),
         4.37f
-        )
+    )
 
     alphaCentaur.run {
         println(component1())
